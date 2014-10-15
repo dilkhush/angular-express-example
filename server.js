@@ -6,9 +6,9 @@ var app        = express(); 						// define our app using express
 var users = require('./config/routes/user');
 var config = require('./config/config');
 var init = require('./init');
-
+module.exports = app;
 var port = process.env.PORT || config.config.port; 		// set our port
-init.db_setup(app);
+init.init_setup(app, config);
 
 
 users.init_routes(app, express);

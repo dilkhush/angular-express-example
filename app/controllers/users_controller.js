@@ -7,7 +7,7 @@ exports.create = function(req, res){
 	user.name = req.body.name;
 	user.save(function(errors){
 		if(errors) res.send(errors);
-		res.json({message: 'User created', status: 201});
+		res.status(201).json({message: 'User created', status: 201});
 	})
 }
 
