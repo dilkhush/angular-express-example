@@ -4,7 +4,6 @@ var User = require('./../../app/models/user');
 // add a user
 exports.create = function(req, res){
 	var user = new User();
-	console.log(req.body)
 	user.name = req.body.name;
 	user.save(function(errors){
 		if(errors) res.send(errors);
