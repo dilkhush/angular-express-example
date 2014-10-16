@@ -1,0 +1,19 @@
+doctype html
+html(lang="en", ng-app="test")
+  head
+  title AngularJs
+  link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css')
+  link(rel='stylesheet', href='/application.css')
+  body
+    div(class="container")
+      div(class="alert" role="alert")
+      div(ng-view)
+
+  script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js')
+  script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular-resource.min.js')
+  script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
+  script(src='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js')
+  script(src='./app.js')
+  script(src='./application.js')
+  script(src='./angular/utils/user_service.js')
+  script(src='./angular/controllers/user_controller.js')

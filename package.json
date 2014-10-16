@@ -9,7 +9,8 @@
 		"body-parser": "~1.0.1",
     "mocha": "*",
     "should": ">= 0.0.1",
-    "supertest": "0.3.x"
+    "supertest": "0.3.x",
+    "jade": ">= 0.0.1"
   },
   "author": "Dilkhush Soni",
   "license": "ISC"

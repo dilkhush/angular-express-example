@@ -8,8 +8,7 @@ var config = require('./config/config');
 var init = require('./init');
 module.exports = app;
 var port = process.env.PORT || config.config.port; 		// set our port
-init.init_setup(app, config);
-
+init.init_setup(app, config, express);
 
 users.init_routes(app, express);
 

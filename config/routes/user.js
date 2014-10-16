@@ -2,9 +2,10 @@ exports.init_routes = function(app, express){
 	var users =  require('../../app/controllers/users_controller')
 	// ROUTES FOR OUR API
 	var router = express.Router(); 				// get an instance of the express Router
+	var router1 = express.Router(); 				// get an instance of the express Router
 	// test route to make sure everything is working (accessed at GET http://localhost:8080/api)
-	router.get('/', function(req, res) {
-		res.json({ message: 'Hey Man its ready to create apis!!!' });	
+	router1.get('/', function(req, res) {
+		res.render('index.jade');	
 	});
 
 	// Routes to create a user
@@ -29,4 +30,5 @@ exports.init_routes = function(app, express){
 
 	// all of our routes will be prefixed with /api
 	app.use('/api/v1', router);
+	app.use('/', router1);
 }

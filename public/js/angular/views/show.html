@@ -1,0 +1,16 @@
+<div ng-controller='UserCtrl' ng-init='getUser()'>
+	<div class="page-header">
+	  <h1>User Show Page</h1>
+	</div>
+	<div class="">
+	  <div class="panel-body">
+	  	{{user.name}}
+	  </div>
+	  <!-- <div class="btn-group">
+    	<button type="button" class="btn btn-default">Edit</button>
+  	</div> -->
+  	<div class="btn-group">
+    	<a class="btn btn-default" ng-click="deleteUser(user._id)" href="javascript:void(0)">Delete</a>
+  	</div>
+	</div>
+</div>
