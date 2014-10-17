@@ -20,6 +20,8 @@ exports.init_routes = function(app, express){
 		.put(users.update)
 		.delete(users.delete)
 
+	router.route('/delete_users').delete(users.deleteUsers)
+
 	// to check all the requests
 	var checker = function(req, res){
 		next(); // to go the the another routes

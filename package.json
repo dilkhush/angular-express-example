@@ -10,7 +10,8 @@
     "mocha": "*",
     "should": ">= 0.0.1",
     "supertest": "0.3.x",
-    "jade": ">= 0.0.1"
+    "jade": ">= 0.0.1",
+    "bcrypt": "*"
   },
   "author": "Dilkhush Soni",
   "license": "ISC"
