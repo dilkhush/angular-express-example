@@ -8,6 +8,9 @@ app.service('userService', function($http){
 	  },
 	  delete: function(id){
 	  	return $http.delete('/api/v1/users/'+id);
+	  },
+	  create: function(user){
+	  	return $http.post('/api/v1/users', user);
 	  }
 	}
 });

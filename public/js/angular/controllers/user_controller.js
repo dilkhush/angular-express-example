@@ -25,4 +25,13 @@ app.controller('UserCtrl', ['$scope', 'userService', '$routeParams', '$location'
   			showMessage('alert-danger', responce.data.message);
   	})	
   }
+
+  $scope.createUser = function(){
+    userService.create($scope.user).then(function(responce){
+      if(responce.data.status == 201)
+        $location.url('/users');
+      else
+        showMessage('alert-danger', responce.data.message);
+    })
+  }
 }]);
