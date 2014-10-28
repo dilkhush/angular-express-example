@@ -34,4 +34,13 @@ app.controller('UserCtrl', ['$scope', 'userService', '$routeParams', '$location'
         showMessage('alert-danger', responce.data.message);
     })
   }
+
+  $scope.updateUser = function(){
+   userService.update($scope.user).then(function(responce){
+      if(responce.data.status == 204)
+        $location.url('/users/'+$scope.user._id+'/show');
+      else
+        showMessage('alert-danger', responce.data.message);
+    }) 
+  }
 }]);

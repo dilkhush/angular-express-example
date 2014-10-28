@@ -36,7 +36,6 @@ exports.update = function(req, res){
 		if(errors) res.send(errors);
 		user.name = req.body.name;
 		user.email = req.body.email;
-		user.password = req.body.password;
 		user.save(function(errors){
 			if(errors) res.send({message: errors.message, status: 422});
 			res.json({message: 'user updated', status: 204})

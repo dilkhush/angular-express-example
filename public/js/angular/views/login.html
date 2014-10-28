@@ -1,0 +1,8 @@
+<div ng-controller='SessionCtrl' ng-init='isLoggedIn()'>
+	<form class="form-signin" role="form">
+	  <h2 class="form-signin-heading">Please sign in</h2>
+	  <input type="email" name="email" ng-model='user.email' class="form-control" placeholder="Email address" required="" autofocus="">
+	  <input type="password" name="password" ng-model='user.password' class="form-control" placeholder="Password" required="">
+	  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+	</form>
+</div>

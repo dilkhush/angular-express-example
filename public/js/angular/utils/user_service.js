@@ -11,6 +11,9 @@ app.service('userService', function($http){
 	  },
 	  create: function(user){
 	  	return $http.post('/api/v1/users', user);
+	  },
+	  update: function(user){
+	  	return $http.put('/api/v1/users/'+user._id, user);
 	  }
 	}
 });
