@@ -30,3 +30,6 @@
 .form-signin .form-signin-heading, .form-signin .checkbox {
 	margin-bottom: 10px;
 }
+div.pull-right{
+	margin-top: -7px;
+}
