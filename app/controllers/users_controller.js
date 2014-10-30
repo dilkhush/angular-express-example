@@ -1,5 +1,6 @@
 // User required
 var User = require('./../../app/models/user');
+var serialize = require('./../../app/serializers/user_serializer');
 
 // add a user
 exports.create = function(req, res){
@@ -18,6 +19,7 @@ exports.create = function(req, res){
 exports.index = function(req, res){
 	User.find(function(errors, users){
 		if (errors)	res.send({message: errors.message, status: 422});
+		users = serialize.users(users)
 		res.json({users: users, status: 200});
 	})
 }
@@ -26,6 +28,7 @@ exports.index = function(req, res){
 exports.show = function(req, res){
 	User.findById(req.params.id, function(errors, user) {
 		if (errors)	res.send({message: errors.message, status: 422});
+		user = serialize.user(user)
 		res.json({user: user, status: 200});
 	});
 }
