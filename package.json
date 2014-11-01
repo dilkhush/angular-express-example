@@ -4,9 +4,9 @@
   "description": "create test apis ",
   "main": "server.js",
   "dependencies": {
-		"express": "~4.0.0",
-		"mongoose": "~3.6.13",
-		"body-parser": "~1.0.1",
+    "express": "~4.0.0",
+    "mongoose": "~3.6.13",
+    "body-parser": "~1.0.1",
     "mocha": "*",
     "should": ">= 0.0.1",
     "supertest": "0.3.x",
@@ -14,5 +14,17 @@
     "bcrypt": "*"
   },
   "author": "Dilkhush Soni",
-  "license": "ISC"
+  "license": "ISC",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dilkhush/angular-express-example.git"
+  }
 }
