@@ -6,9 +6,10 @@ var app        = express(); 						// define our app using express
 var users = require('./config/routes/user');
 var config = require('./config/config');
 var init = require('./init');
+var passport = require('passport');
 module.exports = app;
 var port = process.env.PORT || config.config.port; 		// set our port
-init.init_setup(app, config, express);
+init.init_setup(app, config, express, passport);
 
 users.init_routes(app, express);
 

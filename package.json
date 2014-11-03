@@ -4,14 +4,15 @@
   "description": "create test apis ",
   "main": "server.js",
   "dependencies": {
-    "express": "~4.0.0",
-    "mongoose": "~3.6.13",
+    "bcrypt": "*",
     "body-parser": "~1.0.1",
-    "mocha": "*",
-    "should": ">= 0.0.1",
-    "supertest": "0.3.x",
+    "express": "~4.0.0",
     "jade": ">= 0.0.1",
-    "bcrypt": "*"
+    "mocha": "*",
+    "mongoose": "~3.6.13",
+    "passport": "^0.2.1",
+    "should": ">= 0.0.1",
+    "supertest": "0.3.x"
   },
   "author": "Dilkhush Soni",
   "license": "ISC",

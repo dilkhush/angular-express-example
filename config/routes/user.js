@@ -1,3 +1,4 @@
+var auth = require('../../app/controllers/auth.js')
 exports.init_routes = function(app, express){
 	var users =  require('../../app/controllers/users_controller')
 	// ROUTES FOR OUR API
@@ -29,6 +30,11 @@ exports.init_routes = function(app, express){
 
 	// To check all the requrest is hitting to server or not
 	router.use(checker)
+
+  // Login Url
+  router1.route('/login')
+    .post(auth.login)
+    .delete(auth.logout)
 
 	// all of our routes will be prefixed with /api
 	app.use('/api/v1', router);

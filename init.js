@@ -2,7 +2,7 @@ var bodyParser = require('body-parser');
 var database = require('./config/database');
 // configure app to use bodyParser()
 // this will let us get the data from a POST
-exports.init_setup = function(app, config, express){	
+exports.init_setup = function(app, config, express, passport){	
 	app.use(bodyParser.urlencoded({ extended: true }));
 	app.use(bodyParser.json());
 	database.db_setup(config);
@@ -12,6 +12,7 @@ exports.init_setup = function(app, config, express){
 	app.use(express.static(__dirname + '/public/css'));
 	app.use(express.static(__dirname + '/app'));
 	app.use(express.static(__dirname + '/lib'));
+  app.use(passport.initialize());
 }
 
 exports.SALT_WORK_FACTOR = 10;

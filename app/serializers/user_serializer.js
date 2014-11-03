@@ -1,7 +1,7 @@
 var user_keys = ['_id', 'name', 'email'];
 
 var serilize_user = function(user){
-	return {_id: user._id, name: user.name, email: user.email};
+	return {_id: user._id, name: user.name, email: user.email, access_token: user.access_token};
 }
 
 exports.user = function(user){
