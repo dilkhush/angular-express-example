@@ -1,6 +1,7 @@
 var passport = require('passport');
 var serialize = require('./../../app/serializers/user_serializer');
 var User = require('../models/user');
+var BearerStrategy = require('passport-http-bearer').Strategy;
 
 exports.login = function(req, res){
   if(!req.body.email) res.json({message: 'Email can not be blank', status: 400})
@@ -22,7 +23,7 @@ exports.login = function(req, res){
 }
 
 exports.logout = function(req, res){
-  var access_token = req.params.access_token;
+  var access_token = req.query.access_token;
   User.findOne({access_token: access_token}, function(error, user){
     if(error) return res.json({message: error.message, status: 422});
     if(!user) return res.json({message: 'User not found', status: 404});
@@ -33,3 +34,14 @@ exports.logout = function(req, res){
     })
   })
 }
+
+passport.use(new BearerStrategy({}, function(access_token, done) {
+  process.nextTick(function () {
+    User.findOne({access_token: access_token}, function(error, user){
+      if (error) { return done(error); }
+      if (!user) { return done(null, false); }
+      return done(null, user);
+    })
+  });
+}));
+

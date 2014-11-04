@@ -1,5 +1,5 @@
 var auth = require('../../app/controllers/auth.js')
-exports.init_routes = function(app, express){
+exports.init_routes = function(app, express, passport){
 	var users =  require('../../app/controllers/users_controller')
 	// ROUTES FOR OUR API
 	var router = express.Router(); 				// get an instance of the express Router
@@ -12,16 +12,16 @@ exports.init_routes = function(app, express){
 	// Routes to create a user
 	// uri: /users, method: POST, GET
 	router.route('/users')
-		.post(users.create)
-		.get(users.index)
+		.post(passport.authenticate('bearer', { session: false }), users.create)
+		.get(passport.authenticate('bearer', { session: false }), users.index)
 
 	// on routes that end in /users/:id
 	router.route('/users/:id')
-		.get(users.show)
-		.put(users.update)
-		.delete(users.delete)
+		.get(passport.authenticate('bearer', { session: false }), users.show)
+		.put(passport.authenticate('bearer', { session: false }), users.update)
+		.delete(passport.authenticate('bearer', { session: false }), users.delete)
 
-	router.route('/delete_users').delete(users.deleteUsers)
+	router.route('/delete_users').delete(passport.authenticate('bearer', { session: false }), users.deleteUsers)
 
 	// to check all the requests
 	var checker = function(req, res){
@@ -34,6 +34,9 @@ exports.init_routes = function(app, express){
   // Login Url
   router1.route('/login')
     .post(auth.login)
+
+  // Logout Url
+  router1.route('/logout')
     .delete(auth.logout)
 
 	// all of our routes will be prefixed with /api

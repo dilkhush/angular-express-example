@@ -1,4 +1,4 @@
-var app = angular.module('test', [])
+var app = angular.module('test', ['ngCookies'])
   
   app.config(['$routeProvider', function($routeProvider) {
     $routeProvider.

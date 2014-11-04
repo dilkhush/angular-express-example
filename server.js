@@ -11,7 +11,7 @@ module.exports = app;
 var port = process.env.PORT || config.config.port; 		// set our port
 init.init_setup(app, config, express, passport);
 
-users.init_routes(app, express);
+users.init_routes(app, express, passport);
 
 // START THE SERVER
 app.listen(port);
