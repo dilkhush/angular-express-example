@@ -8,7 +8,7 @@ app.service('authService', function($http, $rootScope, $cookieStore){
       return !(typeof access_token === 'undefined' || access_token === null);
     },
     logout: function(){
-      return $http.delete('/logout?access_token='+$cookieStore.get('access_token'));
+      return $http.delete('/logout');
     }
   }
 })

@@ -10,3 +10,18 @@ var app = angular.module('test', ['ngCookies'])
       when('/users/:id/edit', { templateUrl: 'angular/views/edit.html' }).
       otherwise({ redirectTo: '/' });
   }]);
+
+app.factory('requestInterceptor', ['$cookieStore', function($cookieStore){
+  return {
+    request: function(config){
+      var token = $cookieStore.get('access_token');
+      if(typeof token != 'undefined')
+        config.url = config.url + '?access_token='+token
+      return config;
+    }
+  }
+}])
+
+app.config(['$httpProvider', function($httpProvider){
+  $httpProvider.interceptors.push('requestInterceptor')
+}])
