@@ -4,6 +4,7 @@ var serialize = require('./../../app/serializers/user_serializer');
 
 // add a user
 exports.create = function(req, res){
+  console.log(req)
 	var user = new User();
 	user.name = req.body.name;
 	user.email = req.body.email;

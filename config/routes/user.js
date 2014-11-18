@@ -12,7 +12,7 @@ exports.init_routes = function(app, express, passport){
 	// Routes to create a user
 	// uri: /users, method: POST, GET
 	router.route('/users')
-		.post(passport.authenticate('bearer', { session: false }), users.create)
+		.post(users.create)
 		.get(passport.authenticate('bearer', { session: false }), users.index)
 
 	// on routes that end in /users/:id
