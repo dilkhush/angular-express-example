@@ -11,6 +11,8 @@ Avaiable features:
 	* added angularJs in client side
 	* added mocha to test apis
 	* added token based authentication
+	* added jasmine test cases for apis like login, logout, user create actions.
+	* Added signup process for a user
 	
 
 TODO:
