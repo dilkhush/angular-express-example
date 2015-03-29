@@ -22,7 +22,13 @@
   "scripts": {
     "start": "node server.js"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "should"      : "*",
+    "sinon"       : "*",
+    "zombie"      : "*",
+    "cucumber"    : "*",
+    "html5"       : "*"
+  },
   "optionalDependencies": {},
   "engines": {
     "node": "*"
